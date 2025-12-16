@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Nonas Artesão</title>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="#hero">Nonas Artesão</a>
+            </div>
+
+            <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="#quem-somos">Quem Somos?</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a class="cta" href="#contato">Fale no WhatsApp</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+        <section id="quem-somos" class="hero quem-somos">
+            <div class="container hero-grid">
+                <div class="hero-img">
+                    <div class="img-placeholder">[IMAGEM AQUI: Artesão trabalhando]</div>
+                </div>
+
+                <div class="hero-content">
+                    <h1>QUEM SOMOS?</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum. Donec rutrum sed sem quis venenatis. Proin viverra risus a ultricies varius. Curabitur convallis.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="produtos" class="produtos">
+            <div class="container prod-panel">
+                <h2 class="section-title">Produtos em Destaque</h2>
+
+                <!-- Área de exibição principal com grade 3x2 de miniaturas médias -->
+                <div class="prod-display">
+                    <div class="prod-gallery-grid">
+                        <div class="thumb-med">
+                            <div class="thumb-img">[IMAGEM]</div>
+                            <h4>Taça de Madeira</h4>
+                            <p class="prod-desc">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                        </div>
+                        <div class="thumb-med">
+                            <div class="thumb-img">[IMAGEM]</div>
+                            <h4>Tábua de Corte</h4>
+                            <p class="prod-desc">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                        </div>
+                        <div class="thumb-med">
+                            <div class="thumb-img">[IMAGEM]</div>
+                            <h4>Luminária de Mesa</h4>
+                            <p class="prod-desc">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                        </div>
+                        <div class="thumb-med">
+                            <div class="thumb-img">[IMAGEM]</div>
+                            <h4>Prato Decorativo</h4>
+                            <p class="prod-desc">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                        </div>
+                        <div class="thumb-med">
+                            <div class="thumb-img">[IMAGEM]</div>
+                            <h4>Caixa Organizador</h4>
+                            <p class="prod-desc">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                        </div>
+                        <div class="thumb-med">
+                            <div class="thumb-img">[IMAGEM]</div>
+                            <h4>Porta-copos</h4>
+                            <p class="prod-desc">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Removed old product grid as requested; keeping gallery thumbnails only -->
+                <div class="prod-cta" style="text-align:center;margin-top:1.25rem">
+                    <a class="btn btn-whatsapp" href="https://wa.me/5599999999999?text=Quero%20comprar%20e%20tirar%20duvidas" target="_blank" rel="noopener">Quero Comprar e Tirar Dúvidas</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="contato container">
+            <h2>Contato</h2>
+            <p>Fale conosco pelo WhatsApp para encomendas e orçamentos.</p>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

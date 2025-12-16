@@ -1,0 +1,75 @@
+Instrução Principal: "Gere o código completo (HTML, CSS e JavaScript/JQuery) para uma Landing Page de rolagem única (Single-Page Scroll) de artesanato em madeira. A página deve ser moderna, totalmente responsiva (Mobile-First) e usar a paleta de cores fornecida. A navegação deve ser feita por âncoras (smooth scroll)."
+
+1. Estrutura Base e Header (Navegação)
+HTML: Use a tag <header> para a parte de cima.
+
+CSS: O Header deve ter fundo em #5D4037 e texto em #FEFEFE. Deve ser fixo (posição sticky ou fixed) no topo da tela.
+
+Conteúdo do Header:
+
+Logotipo/Nome do Artesão à esquerda.
+
+Menu de navegação à direita com links (botões) que funcionam como smooth scroll para as seções: Quem Somos?, Produtos, e o CTA Fale Conosco no WhatsApp.
+
+2. Seção 1: Identidade ("Quem Somos?")
+HTML: Deve conter um container principal (Seção hero).
+
+Design: Fundo na cor #F5F5DC.
+
+Conteúdo: Layout em duas colunas no desktop, empilhando no mobile:
+
+Coluna Esquerda: Um grande espaço para a IMG (com placeholder [IMAGEM AQUI: Artesão trabalhando]).
+
+Coluna Direita: Título QUEM SOMOS? e um bloco de texto (lorem ipsum como placeholder para a história).
+
+3. Seção 2: Catálogo de Produtos
+HTML: Seção marcada com ID de âncora produtos.
+
+Design: Fundo em #F5F5DC.
+
+Conteúdo:
+
+Título centralizado: Produtos em Destaque.
+
+Uma grade (Grid) responsiva com espaço para 8 cartões de produto.
+
+Estrutura de cada cartão: Imagem placeholder (quadrada), Título do Produto, e uma breve descrição (lorem ipsum).
+
+Botão CTA Repetido: Abaixo do grid, um grande botão de chamada para ação: Quero Comprar e Tirar Dúvidas (link direto para WhatsApp com fundo #D2691E).
+
+4. Seção 3: Prova Social ("O que Dizem os Clientes")
+HTML: Seção marcada com ID de âncora testemunhos.
+
+Design: Crie um container de fundo que se destaque levemente (ex: cor #FEFEFE com uma borda sutil) para destacar os depoimentos.
+
+Conteúdo:
+
+Título: O que dizem os nossos clientes.
+
+Uma galeria ou carrossel simples (ou apenas 3 blocos estáticos no HTML) para hospedar capturas de tela (prints) de feedback positivo do WhatsApp. Use placeholders para as imagens das prints.
+
+5. Seção 4: Contato e Localização
+HTML: Seção marcada com ID de âncora contato.
+
+Design: Fundo em #F5F5DC.
+
+Conteúdo:
+
+Título: Onde nos Encontrar.
+
+Um espaço grande para incorporar um mapa estático ou um placeholder visual com a localização (endereço fornecido no WhatsApp).
+
+Repetir o botão de CTA: Botão Flutuante (Fixed) com o ícone e texto Chamar no Zap (fundo #8FBC8F ou #D2691E), fixo no canto inferior direito, visível em todas as seções.
+
+6. Rodapé (Footer)
+HTML: Use a tag <footer>.
+
+Design: Fundo na cor #5D4037 e texto em #FEFEFE.
+
+Conteúdo:
+
+Informação de Copyright: Artesanato [Nome do Artesão] © 2024.
+
+Ícones de Redes Sociais: Coloque placeholders para os ícones do Instagram e Facebook (sem links ativos por enquanto).
+
+Este prompt cobre todos os requisitos e fornece a estrutura visual e técnica que você precisa para gerar o esqueleto do seu site!

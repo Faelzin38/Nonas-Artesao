@@ -1,0 +1,128 @@
+/* Paleta de cores */
+:root{
+  --bg-creme: #F5E8D3;
+  --marrom-escuro: #5D4037;
+  --verde-oliva: #8F997E;
+  --marrom-medio: #987F56;
+  --whatsapp-cta: #D2691E;
+  --panel-dark: var(--marrom-escuro); /* usar marrom escuro da paleta */
+  --card-border: rgba(255,255,255,0.06);
+  --gold: #D6B887;
+  --branco: #FFFFFF;
+}
+
+/* Reset simples */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:var(--bg-creme);
+  color:var(--marrom-escuro);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  scroll-behavior:smooth; /* fallback suave */
+}
+
+.container{max-width:1100px;margin:0 auto;padding:0 1rem}
+
+/* HEADER */
+.site-header{
+  background:var(--marrom-escuro);
+  color:var(--branco);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 2px 6px rgba(0,0,0,0.15);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0}
+.logo a{color:var(--branco);text-decoration:none;font-weight:700;font-size:1.05rem}
+
+/* Toggle (mobile) */
+.nav-toggle{background:transparent;border:0;padding:0.5rem;display:inline-flex;align-items:center;justify-content:center;color:var(--branco)}
+.nav-toggle .hamburger{display:block;width:22px;height:2px;background:var(--branco);position:relative}
+.nav-toggle .hamburger::before,.nav-toggle .hamburger::after{content:'';position:absolute;left:0;width:22px;height:2px;background:var(--branco)}
+.nav-toggle .hamburger::before{top:-7px}
+.nav-toggle .hamburger::after{top:7px}
+
+/* Nav mobile (hidden by default) */
+.site-nav{display:none}
+.site-nav.active{display:block;padding:0.5rem 0}
+.site-nav ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0.25rem}
+.site-nav a{display:inline-block;padding:0.5rem 0.75rem;color:var(--branco);text-decoration:none;border-radius:6px}
+.site-nav a:hover{background:rgba(255,255,255,0.06)}
+.site-nav a.cta{background:var(--verde-oliva);color:var(--branco);font-weight:600}
+
+.hero{background:#F5F5DC;padding:2.5rem 0}
+.hero h1{margin:0 0 0.5rem;font-size:1.5rem}
+.hero p{margin:0 0 1rem;color: var(--marrom-escuro);}
+
+/* Quem somos (hero) grid */
+.hero-grid{display:grid;grid-template-columns:1fr;gap:1.25rem;align-items:center}
+.hero-img .img-placeholder{background:#E9E0CB;border-radius:10px;min-height:220px;display:flex;align-items:center;justify-content:center;color:var(--marrom-escuro);font-weight:600;border:2px dashed rgba(93,64,55,0.08);padding:1rem;text-align:center}
+.hero-content h1{font-size:1.5rem;color:var(--marrom-escuro);margin-bottom:0.5rem}
+.hero-content p{color:var(--marrom-escuro);line-height:1.6}
+.btn{display:inline-block;padding:0.6rem 1rem;border-radius:8px;text-decoration:none}
+.btn-primary{background:var(--marrom-medio);color:var(--branco);font-weight:600}
+
+/* Sections */
+.quem-somos, .produtos, .contato{padding:2rem 0}
+.quem-somos h2, .produtos h2, .contato h2{margin-top:0}
+
+/* Desktop styles */
+@media(min-width:768px){
+  .nav-toggle{display:none}
+  .site-nav{display:block}
+  .site-nav ul{flex-direction:row;gap:1rem}
+  .site-nav a{padding:0.5rem 0}
+  .hero h1{font-size:2.25rem}
+  .hero{padding:4rem 0}
+  .hero-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  .hero-content h1{font-size:2rem}
+}
+
+@media(min-width:992px){
+  .prod-grid{grid-template-columns:repeat(3,1fr);gap:1.25rem}
+}
+
+@media(min-width:1200px){
+  .prod-grid{grid-template-columns:repeat(4,1fr);gap:1.5rem}
+}
+
+/* Small visual tweaks */
+.container h2{color:var(--marrom-escuro);margin-bottom:0.5rem}
+
+/* Produtos */
+.produtos{background:var(--panel-dark);padding:3rem 0}
+.prod-panel{padding:1rem}
+.section-title{text-align:center;font-size:1.25rem;margin:0 0 1.5rem;color:var(--gold);font-weight:700}
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;align-items:start}
+.prod-card{background:transparent;border-radius:8px;padding:1rem;border:1px solid var(--card-border);display:flex;flex-direction:column;gap:0.75rem;align-items:center;color:var(--branco)}
+.prod-thumb{width:100%;aspect-ratio:1/1;border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#f5e8d3, #e9e0cb);color:var(--marrom-escuro);font-weight:700;border:1px solid rgba(255,255,255,0.03);max-height:280px;object-fit:cover}
+.prod-card h3{margin:0;font-size:1rem;color:var(--branco);text-align:center}
+.prod-desc{margin:0;color:rgba(255,255,255,0.7);font-size:0.95rem;text-align:center}
+
+/* Área grande de exibição de imagem (restaurada) */
+.prod-display{display:block;margin-bottom:1rem;padding:1rem;border-radius:10px;background:linear-gradient(180deg,#f5e8d3,#efe4cb);border:1px solid rgba(0,0,0,0.06)}
+.prod-display .big-thumb{min-height:340px;display:flex;align-items:center;justify-content:center;color:var(--marrom-escuro);font-weight:700;border-radius:8px;background:var(--bg-creme)}
+
+/* Grade 3x2 de miniaturas médias dentro da caixa */
+.prod-gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;align-items:stretch}
+.thumb-med{background:#EDE6DA;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;color:var(--marrom-escuro);font-weight:700;padding:0.75rem;min-height:140px}
+.thumb-med .thumb-img{width:100%;aspect-ratio:1/1;border-radius:6px;background:#f5e8d3;display:flex;align-items:center;justify-content:center;margin-bottom:0.5rem}
+.thumb-med h4{margin:0;font-size:0.95rem;color:var(--marrom-escuro);font-weight:700;text-align:center}
+.thumb-med .prod-desc{margin:0;margin-top:0.35rem;color:#6b584f;font-size:0.85rem;text-align:center;font-weight:400}
+
+@media(max-width:640px){
+  .prod-gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .thumb-med{min-height:110px}
+}
+.prod-card{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.prod-card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(0,0,0,0.35);border-color:rgba(255,255,255,0.12)}
+.prod-cta .btn-whatsapp{background:var(--gold);color:var(--marrom-escuro);padding:0.9rem 1.1rem;border-radius:10px;text-decoration:none;display:inline-block;font-weight:700}
+.prod-cta .btn-whatsapp:hover{filter:brightness(.95)}
+
+/* Ensure content isn't hidden behind sticky header */
+:target:before{content:'';display:block;height:72px;margin-top:-72px}
+
+/* Accessibility focus */
+a:focus{outline:3px solid rgba(143,153,126,0.25);outline-offset:2px}
