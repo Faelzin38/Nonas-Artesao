@@ -1,5 +1,25 @@
-Instrução Principal: "Gere o código completo (HTML, CSS e JavaScript/JQuery) para uma Landing Page de rolagem única (Single-Page Scroll) de artesanato em madeira. A página deve ser moderna, totalmente responsiva (Mobile-First) e usar a paleta de cores fornecida. A navegação deve ser feita por âncoras (smooth scroll)."
+vamos criar um site completo (HTML, CSS e JavaScript/JQuery) para uma Landing Page de rolagem única (Single-Page Scroll) de artesanato em madeira. A página deve ser moderna, totalmente responsiva (Mobile-First) e usar a paleta de cores fornecida. A navegação deve ser feita por âncoras (smooth scroll)
 
+vamos fazer por parte e vou te passando o que for necessário ok?
+-----------------------------------------------------------------
+Paleta de cores:
+
+Fundo Principal (Creme Quente): #F5E8D3 (Um bege oucre claro) O fundo principal da página, dando a sensação de papel artesanal ou madeira clara.
+
+Marrom Escuro (Destaque/Texto):#5D4037 (Similar à madeira escura ou café) Header, Rodapé, Texto principal, Contorno do mapa.
+
+Verde Oliva (CTA): #8F997E (Um verde musgo dessaturado)O botão principal de ação (Chamar no Zap), conferindo um toque natural.
+
+
+Marrom Médio (Botões/Caixas):#987F56 (Um marrom de madeira média)
+Fundo do menu de navegação e do texto do catálogo de produtos.
+
+
+Branco (Texto/Cartões): #FFFFFF Fundo dos cartões de produto e alguns blocos de texto.
+
+
+Não faça nada ainda apenas guarde essa informação
+-----------------------------------------------------------------
 1. Estrutura Base e Header (Navegação)
 HTML: Use a tag <header> para a parte de cima.
 
@@ -34,7 +54,7 @@ Título centralizado: Produtos em Destaque.
 Uma grade (Grid) responsiva com espaço para 8 cartões de produto.
 
 Estrutura de cada cartão: Imagem placeholder (quadrada), Título do Produto, e uma breve descrição (lorem ipsum).
-
+	
 Botão CTA Repetido: Abaixo do grid, um grande botão de chamada para ação: Quero Comprar e Tirar Dúvidas (link direto para WhatsApp com fundo #D2691E).
 
 4. Seção 3: Prova Social ("O que Dizem os Clientes")
@@ -72,4 +92,3 @@ Informação de Copyright: Artesanato [Nome do Artesão] © 2024.
 
 Ícones de Redes Sociais: Coloque placeholders para os ícones do Instagram e Facebook (sem links ativos por enquanto).
 
-Este prompt cobre todos os requisitos e fornece a estrutura visual e técnica que você precisa para gerar o esqueleto do seu site!
