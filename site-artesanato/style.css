@@ -36,7 +36,7 @@ body{
   position:sticky;
   top:0;
   z-index:1000;
-  box-shadow:0 2px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
 }
 .header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0}
 .logo a{color:var(--branco);text-decoration:none;font-weight:700;font-size:1.05rem}
@@ -103,8 +103,19 @@ body{
 
 /* Produtos */
 .produtos {
-  background: var(--panel-dark);
-  padding: 1.5rem 0 3rem; /* Padding de cima reduzido para o título subir */
+    padding: 2rem 0; /* Keep section spacing */
+}
+
+.produtos-background {
+    background-color: var(--marrom-escuro);
+    background-image: url('imgs/fundo-de-textura.jpg');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    padding: 1.5rem 1rem 3rem;
+    margin: 0 2rem; /* 2rem margin on each side */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
 }
 
 /* Título da seção PRODUTOS especificamente */
@@ -313,6 +324,7 @@ body{
     text-align: center;
     position: relative;
     z-index: 1001;
+    box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.5);
 }
 
 .footer-content {
