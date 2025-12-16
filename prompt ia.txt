@@ -1,6 +1,13 @@
 vamos criar um site completo (HTML, CSS e JavaScript/JQuery) para uma Landing Page de rolagem única (Single-Page Scroll) de artesanato em madeira. A página deve ser moderna, totalmente responsiva (Mobile-First) e usar a paleta de cores fornecida. A navegação deve ser feita por âncoras (smooth scroll)
 
+
 vamos fazer por parte e vou te passando o que for necessário ok?
+----------------------------------------------------------------
+
+estou criando um site completo (HTML, CSS e JavaScript/JQuery) para uma Landing Page de rolagem única (Single-Page Scroll) de artesanato em madeira. A página deve ser moderna, totalmente responsiva (Mobile-First) e usar a paleta de cores fornecida. A navegação deve ser feita por âncoras (smooth scroll)
+
+vamos fazer por parte e vou te passando o que for necessário ok?
+eu já estava fazendo ele em outro pc então quero que você analize e guarde as informações que vou te passar
 -----------------------------------------------------------------
 Paleta de cores:
 
