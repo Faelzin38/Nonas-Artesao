@@ -1,8 +1,9 @@
+
 /* Paleta de cores */
 :root{
   --bg-creme: #F5E8D3;
   --marrom-escuro: #5D4037;
-  --verde-oliva: #8F997E;
+  --verde-oliva: #8eaf53;
   --marrom-medio: #987F56;
   --whatsapp-cta: #D2691E;
   --panel-dark: var(--marrom-escuro); /* usar marrom escuro da paleta */
@@ -27,7 +28,9 @@ body{
 
 /* HEADER */
 .site-header{
-  background:var(--marrom-escuro);
+  background-color: var(--marrom-escuro);
+  background-image: linear-gradient(90deg, rgba(255,255,255,0.07) 50%, transparent 50%), linear-gradient(rgba(255,255,255,0.13) 50%, transparent 50%);
+  background-size: 60px 60px;
   color:var(--branco);
   position:sticky;
   top:0;
@@ -78,7 +81,7 @@ body{
 @media(min-width:768px){
   .nav-toggle{display:none}
   .site-nav{display:block}
-  .site-nav ul{flex-direction:row;gap:1rem}
+  .site-nav ul{flex-direction:row;gap:1.5rem}
   .site-nav a{padding:0.5rem 0}
   .hero h1{font-size:2.25rem}
   .hero{padding:4rem 0}
@@ -300,6 +303,8 @@ body{
 /* Footer */
 .site-footer-main {
     background-color: var(--marrom-escuro);
+    background-image: linear-gradient(90deg, rgba(255,255,255,0.07) 50%, transparent 50%), linear-gradient(rgba(255,255,255,0.13) 50%, transparent 50%);
+    background-size: 60px 60px;
     color: #FEFEFE;
     padding: 2rem 0;
     text-align: center;
