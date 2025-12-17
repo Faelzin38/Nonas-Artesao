@@ -2,7 +2,7 @@
 :root{
   --bg-creme: #F5E8D3;
   --marrom-escuro: #5D4037;
-  --verde-oliva: #8eaf53;
+  --verde-oliva: #a7d853;
   --marrom-medio: #987F56;
   --whatsapp-cta: #D2691E;
   --panel-dark: var(--marrom-escuro);
@@ -333,20 +333,26 @@ main {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: var(--verde-oliva);
-    color: var(--branco);
-    padding: 1rem 1.5rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    background-color: transparent;
+    width: 60px;
+    height: 60px;
     z-index: 1000;
-    transition: transform 0.2s ease, background-color 0.2s;
+    transition: transform 0.2s ease;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.floating-cta img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
 }
 
 .floating-cta:hover {
-    background-color: #7a856b;
     transform: scale(1.1);
+    background-color: transparent;
 }
 
 /* FOOTER */
