@@ -72,19 +72,39 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     }
 
-    // --- Floating CTA vs Footer Logic ---
+    // --- Back to Top Button Logic ---
+    const backToTopButton = document.getElementById('back-to-top');
+
+    if (backToTopButton) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) { // Show button after scrolling 300px
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // --- Floating CTA & Back-to-Top vs Footer Logic ---
     const floatingCta = document.querySelector('.floating-cta');
     const footer = document.querySelector('.site-footer-main');
 
-    if (floatingCta && footer) {
+    if (floatingCta && backToTopButton && footer) {
         const observer = new IntersectionObserver(
             (entries) => {
                 const footerEntry = entries[0];
                 if (footerEntry.isIntersecting) {
                     const footerHeight = footer.offsetHeight;
                     floatingCta.style.bottom = `${footerHeight + 20}px`;
+                    backToTopButton.style.bottom = `${footerHeight + 95}px`;
                 } else {
                     floatingCta.style.bottom = '20px';
+                    backToTopButton.style.bottom = '95px';
                 }
             },
             { threshold: 0.1 } // Trigger when 10% of the footer is visible
