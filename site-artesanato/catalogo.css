@@ -99,4 +99,25 @@
     .catalog-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+    .btn-voltar {
+        position: absolute;
+        left: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0.3rem 0.6rem;
+        font-size: 0.85rem;
+    }
+    .btn-voltar:hover {
+        transform: translateY(-50%) scale(1.02);
+        letter-spacing: 0.5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .catalog-grid {
+        grid-template-columns: 1fr;
+    }
 }
