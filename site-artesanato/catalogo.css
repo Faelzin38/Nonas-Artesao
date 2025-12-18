@@ -63,9 +63,16 @@
 }
 
 .catalog-item h4 {
-    margin: 1rem 0;
+    margin: 1rem 0 0.5rem;
     color: var(--marrom-escuro);
     font-size: 1.1rem;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--marrom-medio);
+    margin: 0 0 1rem;
 }
 
 .video-grid {
