@@ -36,48 +36,75 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     });
 
-    // --- Generic Carousel Logic for Mobile ---
-    const initMobileCarousel = (carouselSelector, trackSelector, prevBtnSelector, nextBtnSelector) => {
-        if (window.innerWidth > 768) return; // Only run on mobile
+    // --- Universal Carousel Setup ---
+    const setupCarousel = (carouselElement) => {
+        const track = carouselElement.querySelector('.carousel-track, .testimonial-track');
+        const prevButton = carouselElement.querySelector('.prev-arrow, .testimonial-prev');
+        const nextButton = carouselElement.querySelector('.next-arrow, .testimonial-next');
 
-        const carousel = document.querySelector(carouselSelector);
-        if (!carousel) return;
+        if (!track || !prevButton || !nextButton) return;
 
-        const track = carousel.querySelector(trackSelector);
         const slides = Array.from(track.children);
-        const nextButton = carousel.querySelector(nextBtnSelector);
-        const prevButton = carousel.querySelector(prevBtnSelector);
-
-        if (slides.length > 1 && nextButton && prevButton) {
-            let currentSlide = 0;
-            const updateSlidePosition = () => {
-                const amountToMove = -100 * currentSlide;
-                track.style.transform = `translateX(${amountToMove}%)`;
-                prevButton.style.display = currentSlide === 0 ? 'none' : 'block';
-                nextButton.style.display = currentSlide === slides.length - 1 ? 'none' : 'block';
-            };
-
-            nextButton.addEventListener('click', () => {
-                if (currentSlide < slides.length - 1) {
-                    currentSlide++;
-                    updateSlidePosition();
-                }
-            });
-
-            prevButton.addEventListener('click', () => {
-                if (currentSlide > 0) {
-                    currentSlide--;
-                    updateSlidePosition();
-                }
-            });
-            updateSlidePosition(); // Initial setup
+        if (slides.length <= 1) {
+            prevButton.style.display = 'none';
+            nextButton.style.display = 'none';
+            return;
         }
+
+        let currentSlide = 0;
+
+        const updateCarousel = () => {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            prevButton.style.display = currentSlide === 0 ? 'none' : 'flex';
+            nextButton.style.display = currentSlide === slides.length - 1 ? 'none' : 'flex';
+        };
+
+        nextButton.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateCarousel();
+            }
+        });
+
+        prevButton.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateCarousel();
+            }
+        });
+
+        updateCarousel(); // Set initial state
     };
 
-    // Initialize all carousels
-    initMobileCarousel('.product-carousel', '.carousel-track', '.prev-arrow', '.next-arrow');
-    initMobileCarousel('.testimonial-carousel', '.testimonial-track', '.testimonial-prev', '.testimonial-next');
+    // --- Initialize Carousels based on context ---
+    const productCarousel = document.querySelector('.product-carousel');
+    if (productCarousel) {
+        setupCarousel(productCarousel);
+    }
+
+    // Testimonial carousel is more complex: grid on desktop, carousel on mobile.
+    // We need to check screen width and potentially re-init on resize.
+    const testimonialCarousel = document.querySelector('.testimonial-carousel');
+    let testimonialIsCarousel = false;
+
+    const initTestimonialCarousel = () => {
+        if (window.innerWidth <= 768) {
+            if (!testimonialIsCarousel && testimonialCarousel) {
+                setupCarousel(testimonialCarousel);
+                testimonialIsCarousel = true;
+            }
+        } else {
+            // On desktop, it's a grid, so we don't initialize it.
+            // If we wanted to revert a carousel back to a grid, logic would go here.
+            testimonialIsCarousel = false;
+        }
+    };
     
+    // Initial check
+    initTestimonialCarousel();
+    // Optional: check on resize if you want it to be responsive without a refresh
+    // window.addEventListener('resize', initTestimonialCarousel); 
+
     // --- Back to Top Button Logic ---
     const backToTopButton = document.getElementById('back-to-top');
     if (backToTopButton) {

@@ -134,6 +134,33 @@
         background-color: #000; /* Black bg for video */
     }
 
+    /* This is the correct style matching the testimonial buttons */
+    .video-carousel .carousel-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.4);
+        border: none;
+        color: var(--marrom-escuro);
+        font-size: 2rem;
+        font-weight: 600; /* Make the chevron thicker */
+        cursor: pointer;
+        z-index: 10;
+        padding: 0.5rem;
+        border-radius: 50%;
+        line-height: 1;
+        width: 50px;
+        height: 50px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .video-carousel .carousel-arrow:hover {
+        background-color: white;
+    }
+
     .video-carousel .testimonial-prev {
         left: 10px;
     }

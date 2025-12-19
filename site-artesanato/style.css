@@ -570,6 +570,9 @@ main {
   .testimonial-slide {
       padding: 0;
   }
+  .product-carousel .carousel-arrow {
+    display: flex;
+  }
 }
 
 @media(min-width:992px){
