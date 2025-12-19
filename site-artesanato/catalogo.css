@@ -1,4 +1,4 @@
-/* Estilos para a página de Catálogo */
+cade/* Estilos para a página de Catálogo */
 
 .catalog-title {
     text-align: center;
@@ -75,66 +75,116 @@
     margin: 0 0 1rem;
 }
 
-.video-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
+/* =================================== */
+/*          VIDEO SECTION              */
+/* =================================== */
+
+/* --- Container for the whole component --- */
+.video-carousel {
+    position: relative;
+    overflow: hidden; /* Clips the slides that are off-screen */
 }
 
+/* --- The moving track --- */
+#videos .testimonial-track {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* --- Individual slide (for mobile carousel) --- */
+#videos .testimonial-slide {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    padding: 0 4rem; /* Creates space for the arrows */
+}
+
+/* --- The actual video container --- */
 .video-container {
-    max-width: 200px;
-    flex-grow: 1;
+    width: 100%;
+    margin: 0 auto; /* Centers the container within the padded slide */
     aspect-ratio: 9 / 16;
-    background: var(--branco);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    background: #000; /* Black background behind video */
 }
 
 .video-container video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Prevents stretching */
 }
 
-.video-placeholder {
-    background-color: #f0f0f0;
-    height: 200px;
+
+/* --- Arrows (visible on mobile) --- */
+.video-carousel .carousel-arrow {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.4);
+    border: none;
+    color: var(--marrom-escuro);
+    font-size: 2rem;
     font-weight: 600;
-    color: var(--marrom-medio);
+    cursor: pointer;
+    z-index: 10;
+    padding: 0.5rem;
+    border-radius: 50%;
+    line-height: 1;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
-@media (max-width: 768px) {
-    .catalog-title {
-        font-size: 2rem;
-    }
-    .catalog-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-    .video-grid {
-        gap: 1rem;
-    }
-    .btn-voltar {
-        position: absolute;
-        left: 0.75rem;
-        top: 50%;
-        transform: translateY(-50%);
-        padding: 0.3rem 0.6rem;
-        font-size: 0.85rem;
-    }
-    .btn-voltar:hover {
-        transform: translateY(-50%) scale(1.02);
-        letter-spacing: 0.5px;
-    }
+.video-carousel .carousel-arrow:hover {
+    background-color: white;
 }
 
+.video-carousel .testimonial-prev {
+    left: 10px;
+}
+
+.video-carousel .testimonial-next {
+    right: 10px;
+}
+
+/* --- Smallest Mobile adjustment --- */
 @media (max-width: 480px) {
-    .catalog-grid {
-        grid-template-columns: 1fr;
+    #videos .testimonial-slide {
+        padding: 0 3.5rem; /* Less padding on smaller screens */
+    }
+    .video-carousel .testimonial-prev {
+        left: 0.5rem;
+    }
+    .video-carousel .testimonial-next {
+        right: 0.5rem;
+    }
+}
+
+
+/* --- Desktop Grid View (Overrides mobile styles) --- */
+@media (min-width: 769px) {
+    .video-carousel {
+        overflow: visible; /* Show all items, no clipping */
+    }
+
+    #videos .testimonial-track {
+        display: flex;
+        justify-content: center; /* Center the videos in the available space */
+        gap: 2rem;
+        transform: none !important; /* Override JS-driven transform */
+    }
+
+    #videos .testimonial-slide {
+        flex: 0 1 200px; /* Each video has a base width of 200px */
+        padding: 0; /* Remove mobile padding */
+    }
+
+    /* Hide carousel arrows on desktop */
+    .video-carousel .carousel-arrow {
+        display: none !important;
     }
 }

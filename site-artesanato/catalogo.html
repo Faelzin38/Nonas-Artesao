@@ -48,19 +48,29 @@
 
             <section id="videos" class="catalog-section">
                 <h2 class="section-title">Vídeos</h2>
-                <div class="video-grid">
-                    <div class="video-container">
-                        <video class="lazy-video" controls playsinline preload="metadata">
-                            <source data-src="videos/video3webm.webm" type="video/webm">
-                            <source data-src="videos/video3mp4.mp4" type="video/mp4">
-                        </video>
+                <div class="video-carousel">
+                    <div class="testimonial-track-container">
+                        <div class="testimonial-track">
+                            <div class="testimonial-slide">
+                                <div class="video-container">
+                                    <video class="lazy-video" controls playsinline preload="metadata">
+                                        <source data-src="videos/video3webm.webm" type="video/webm">
+                                        <source data-src="videos/video3mp4.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="testimonial-slide">
+                                <div class="video-container">
+                                    <video class="lazy-video" controls playsinline preload="metadata">
+                                        <source data-src="videos/video4webm.webm" type="video/webm">
+                                        <source data-src="videos/video4mp4.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="video-container">
-                        <video class="lazy-video" controls playsinline preload="metadata">
-                            <source data-src="videos/video4webm.webm" type="video/webm">
-                            <source data-src="videos/video4mp4.mp4" type="video/mp4">
-                        </video>
-                    </div>
+                    <button class="carousel-arrow testimonial-prev" aria-label="Vídeo anterior">&#10094;</button>
+                    <button class="carousel-arrow testimonial-next" aria-label="Próximo vídeo">&#10095;</button>
                 </div>
             </section>
 
@@ -365,6 +375,5 @@
     </a>
 
     <script src="js/main.js"></script>
-    <script src="js/lazy-load-videos.js"></script>
 </body>
 </html>
