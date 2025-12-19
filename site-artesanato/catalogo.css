@@ -75,6 +75,11 @@
     margin: 0 0 1rem;
 }
 
+/* Video Carousel Base Styles */
+.video-carousel {
+    position: relative;
+}
+
 .video-grid {
     display: flex;
     justify-content: center;
@@ -98,43 +103,55 @@
     object-fit: cover;
 }
 
-.video-placeholder {
-    background-color: #f0f0f0;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    font-weight: 600;
-    color: var(--marrom-medio);
-}
-
+/* Responsive Carousel Styles */
 @media (max-width: 768px) {
-    .catalog-title {
-        font-size: 2rem;
+    .video-carousel {
+        overflow: hidden;
     }
-    .catalog-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
+
     .video-grid {
-        gap: 1rem;
+        flex-wrap: nowrap;
+        justify-content: flex-start; /* Align items to the start */
+        gap: 0; /* No gap in carousel mode */
+        transition: transform 0.3s ease-in-out;
     }
-    .btn-voltar {
-        position: absolute;
-        left: 0.75rem;
-        top: 50%;
-        transform: translateY(-50%);
-        padding: 0.3rem 0.6rem;
-        font-size: 0.85rem;
+
+    .video-container {
+        flex: 0 0 100%;
+        max-width: 100%;
+        background: transparent;
+        box-shadow: none;
+        border-radius: 0;
+        aspect-ratio: unset;
+        height: 400px; /* Give it a fixed height */
+        padding: 0 4rem; /* Padding for buttons */
+        box-sizing: border-box;
     }
-    .btn-voltar:hover {
-        transform: translateY(-50%) scale(1.02);
-        letter-spacing: 0.5px;
+
+    .video-container video {
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        background-color: #000; /* Black bg for video */
+    }
+
+    .video-carousel .testimonial-prev {
+        left: 10px;
+    }
+
+    .video-carousel .testimonial-next {
+        right: 10px;
     }
 }
 
 @media (max-width: 480px) {
-    .catalog-grid {
-        grid-template-columns: 1fr;
+    .video-container {
+        padding: 0 3.5rem; /* Less padding on smaller screens */
+        height: 350px;
+    }
+    .video-carousel .testimonial-prev {
+        left: 0.5rem;
+    }
+    .video-carousel .testimonial-next {
+        right: 0.5rem;
     }
 }

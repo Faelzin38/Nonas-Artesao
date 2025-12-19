@@ -36,12 +36,17 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     });
 
-    // --- Product Carousel Logic ---
-    const track = document.querySelector('.carousel-track');
-    if (track) {
+    // --- Generic Carousel Logic for Mobile ---
+    const initMobileCarousel = (carouselSelector, trackSelector, prevBtnSelector, nextBtnSelector) => {
+        if (window.innerWidth > 768) return; // Only run on mobile
+
+        const carousel = document.querySelector(carouselSelector);
+        if (!carousel) return;
+
+        const track = carousel.querySelector(trackSelector);
         const slides = Array.from(track.children);
-        const nextButton = document.querySelector('.product-carousel .next-arrow');
-        const prevButton = document.querySelector('.product-carousel .prev-arrow');
+        const nextButton = carousel.querySelector(nextBtnSelector);
+        const prevButton = carousel.querySelector(prevBtnSelector);
 
         if (slides.length > 1 && nextButton && prevButton) {
             let currentSlide = 0;
@@ -50,63 +55,29 @@ document.addEventListener('DOMContentLoaded', function(){
                 track.style.transform = `translateX(${amountToMove}%)`;
                 prevButton.style.display = currentSlide === 0 ? 'none' : 'block';
                 nextButton.style.display = currentSlide === slides.length - 1 ? 'none' : 'block';
-            }
+            };
+
             nextButton.addEventListener('click', () => {
                 if (currentSlide < slides.length - 1) {
                     currentSlide++;
                     updateSlidePosition();
                 }
             });
+
             prevButton.addEventListener('click', () => {
                 if (currentSlide > 0) {
                     currentSlide--;
                     updateSlidePosition();
                 }
             });
-            updateSlidePosition();
-        }
-    }
-
-    // --- Testimonial Carousel Logic (Mobile Only) ---
-    const initTestimonialCarousel = () => {
-        if (window.innerWidth > 768) return; // Only run on mobile
-
-        const testimonialTrack = document.querySelector('.testimonial-track');
-        if (testimonialTrack) {
-            const testimonialSlides = Array.from(testimonialTrack.children);
-            const testimonialNextBtn = document.querySelector('.testimonial-next');
-            const testimonialPrevBtn = document.querySelector('.testimonial-prev');
-            
-            if(testimonialSlides.length > 1 && testimonialNextBtn && testimonialPrevBtn){
-                let currentTestimonial = 0;
-                const updateTestimonialPosition = () => {
-                    const amountToMove = -100 * currentTestimonial;
-                    testimonialTrack.style.transform = `translateX(${amountToMove}%)`;
-                    testimonialPrevBtn.style.display = currentTestimonial === 0 ? 'none' : 'block';
-                    testimonialNextBtn.style.display = currentTestimonial === testimonialSlides.length - 1 ? 'none' : 'block';
-                }
-
-                testimonialNextBtn.addEventListener('click', () => {
-                    if(currentTestimonial < testimonialSlides.length - 1) {
-                        currentTestimonial++;
-                        updateTestimonialPosition();
-                    }
-                });
-
-                testimonialPrevBtn.addEventListener('click', () => {
-                    if(currentTestimonial > 0) {
-                        currentTestimonial--;
-                        updateTestimonialPosition();
-                    }
-                });
-                updateTestimonialPosition();
-            }
+            updateSlidePosition(); // Initial setup
         }
     };
 
-    initTestimonialCarousel(); // Run on load
-    // Note: This doesn't handle resize. For a more robust solution, you'd use a resize listener.
-
+    // Initialize all carousels
+    initMobileCarousel('.product-carousel', '.carousel-track', '.prev-arrow', '.next-arrow');
+    initMobileCarousel('.testimonial-carousel', '.testimonial-track', '.testimonial-prev', '.testimonial-next');
+    
     // --- Back to Top Button Logic ---
     const backToTopButton = document.getElementById('back-to-top');
     if (backToTopButton) {
