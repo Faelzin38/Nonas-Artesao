@@ -49,17 +49,17 @@
             <section id="videos" class="catalog-section">
                 <h2 class="section-title">Vídeos</h2>
                 <div class="video-grid">
-                    <div class="catalog-item">
-                        <iframe src="https://www.youtube.com/embed/ThfvtcwpKkU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <div class="video-container">
+                        <video class="lazy-video" controls playsinline preload="metadata">
+                            <source data-src="videos/video3webm.webm" type="video/webm">
+                            <source data-src="videos/video3mp4.mp4" type="video/mp4">
+                        </video>
                     </div>
-                    <div class="catalog-item">
-                        <iframe src="https://www.youtube.com/embed/m-UzIc3xPqc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                    <div class="catalog-item">
-                        <iframe src="https://www.youtube.com/embed/4J9zeujZZ7o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                    <div class="catalog-item">
-                        <iframe src="https://www.youtube.com/embed/-3L_BnATeaA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <div class="video-container">
+                        <video class="lazy-video" controls playsinline preload="metadata">
+                            <source data-src="videos/video4webm.webm" type="video/webm">
+                            <source data-src="videos/video4mp4.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
             </section>
@@ -140,7 +140,6 @@
                     </div>
                     <div class="catalog-item">
                         <img src="imgs/mesas/artesanato56.webp" loading="lazy" alt="Produto 14">
-                        <h4>Produto 14</h4>
                         <p class="product-price">R$ 0,00</p>
                     </div>
                 </div>
@@ -366,5 +365,6 @@
     </a>
 
     <script src="js/main.js"></script>
+    <script src="js/lazy-load-videos.js"></script>
 </body>
 </html>

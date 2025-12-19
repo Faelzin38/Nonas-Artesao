@@ -205,7 +205,7 @@ main {
 }
 
 /* SECTIONS */
-.hero, .sobre-o-artesao, .produtos, .contato, .testemunhos {
+.hero, .sobre-o-artesao, .produtos, .contato, .testemunhos, .videos {
     padding: 2rem 0;
 }
 
@@ -329,6 +329,12 @@ main {
     filter: brightness(.95);
     transform: scale(1.05);
 }
+
+/* VIDEOS SECTION */
+.videos .section-title { color: var(--marrom-escuro); text-align: center; margin-bottom: 2rem; }
+.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+.video-container { background: var(--branco); border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+.video-container video { width: 100%; height: auto; display: block; }
 
 /* TESTEMUNHOS */
 .testemunhos { background-color: #FEFEFE; border-top: 1px solid #EAEAEA; border-bottom: 1px solid #EAEAEA; }
@@ -576,3 +582,4 @@ main {
 
 :target:before{content:'';display:block;height:72px;margin-top:-72px}
 a:focus{outline:3px solid rgba(143,153,126,0.25);outline-offset:2px}
+
